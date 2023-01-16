@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    useLibrary 'org.apache.http.legacy'
+    defaultConfig {
+        applicationId "com.fgtit.onepass"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+		ndk{
+			abiFilters "armeabi","armeabi-v7a"
+		}
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        resources {
+            excludes += ['META-INF/LICENSE', 'META-INF/NOTICE']
+        }
+    }
+    namespace 'com.fgtit.onepass'
+}
+
+dependencies {
+    //noinspection GradleCompatible
+    implementation 'com.android.support:support-v4:19.1.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:appcompat-v7:19.1.0'
+    implementation files('libs/android-core-3.1.1-SNAPSHOT.jar')
+    implementation files('libs/baidumapapi_v3_1_1.jar')
+    implementation files('libs/core-3.1.1-SNAPSHOT.jar')
+    implementation files('libs/jackson-annotations-2.7.0.jar')
+    implementation files('libs/jackson-core-2.7.0.jar')
+    implementation files('libs/locSDK_4.2.jar')
+    implementation 'com.google.code.gson:gson:2.8.6'
+}
