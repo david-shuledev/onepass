@@ -23,11 +23,8 @@
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.BROADCAST_STICKY" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
     <uses-permission android:name="android.permission.NFC" />
@@ -36,7 +33,7 @@
     <!--     <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" >
         </permission> -->
 
-    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"></uses-permission>
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -60,7 +57,7 @@
             android:process=":remote"></service>
         <!-- USB连接指定接受广播的类 -->
         <receiver android:name="com.fgtit.service.UsbBroadcastReceiver"
-            android:exported="true">
+            android:exported="false">
             <intent-filter>
                 <action android:name="NotifyUsbStartNet" />
                 <action android:name="NotifyUsbStopNet" />
